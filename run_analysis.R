@@ -2,7 +2,8 @@ sanitise <- function(variableName) {
   translationList <- list(
     c("^t(.+)","TimeDomain\\1"),
     c("^f(.+)","FreqDomain\\1"),
-    c("Acc(.*)\\-","Acceleration\\1\\-"),
+    c("Acc(.*)\\-","Accelerometer\\1\\-"),
+    c("Gyro(.*)\\-","Gyroscope\\1\\-"),
     c("Mag(.*)\\-","Magnitude\\1\\-"),
     c("(.+)\\-([X|Y|Z])$","\\2Axis\\1"),
     c("(.+)\\-mean\\(\\)(.*)","mean\\1\\2"),
