@@ -33,7 +33,7 @@ readFeatures <- function() {
     }
   }
   close(con)
-  list(position=featurePosition,name=featureName)
+  list(position=featurePosition, name=featureName)
 }
 
 readActivities <- function() {
@@ -78,7 +78,6 @@ resultTable <- aggregate(tidyTable[!names(tidyTable) %in% c("SUBJECT","ACTIVITY"
                          list(SUBJECT = tidyTable$SUBJECT, ACTIVITY = tidyTable$ACTIVITY), FUN = "mean")
 resultTable <- resultTable[order(resultTable$SUBJECT, resultTable$ACTIVITY),]
 
-activitiesFile <- "UCI HAR Dataset\\tidyAveragedTable.txt"
 write.table(resultTable, file = "UCI HAR Dataset\\tidyAveragedTable.txt", row.names = FALSE)
 
 
